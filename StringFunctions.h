@@ -1,3 +1,5 @@
+// Following set of scripts were used to load data: https://github.com/Kotbenek/TSP Implemented by KotBenek.
+// Source: https://github.com/Kotbenek/TSP
 #pragma once
 #include <string>
 

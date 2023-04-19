@@ -1,3 +1,5 @@
+// Following set of scripts were used to load data: https://github.com/Kotbenek/TSP Implemented by KotBenek.
+// Source: https://github.com/Kotbenek/TSP
 #pragma once
 #include <string>
 #include <iostream>
@@ -17,15 +19,15 @@ class Instance
 public:
 	int size = -1;
 	int64_t optimal_tour_length = -1;
-	
+	string fileName;
 	Instance(string filename, bool parse_data_to_matrix);
 	~Instance();
 	int edge_weight(int from, int to);
 	void display();
-
+    int** matrix;
+    int** matrix_copy;
+    void resetCopyMatrix();
 private:
-	int** matrix;
-
 	double** coords;
 	CoordsWeightType coords_weight_type;
 	bool is_instance_data_in_matrix;
@@ -45,4 +47,6 @@ private:
 	int ceil_2d_distance(int from_city, int to_city);
 	int geo_distance(int from_city, int to_city);
 	int att_distance(int from_city, int to_city);
+
+
 };
